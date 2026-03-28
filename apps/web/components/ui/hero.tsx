@@ -1,11 +1,18 @@
 "use client"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import Link from "next/link"
 import { MeshGradient } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
 
 export default function ShaderShowcase() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(console.error)
+    }
+  }, [])
 
   return (
     <div
@@ -88,12 +95,14 @@ export default function ShaderShowcase() {
 
       {/* Video */}
       <video
+        ref={videoRef}
         className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 object-cover"
         src="/images/video2.mp4"
-        autoPlay
         loop
         muted
         playsInline
+        controls
+        preload="auto"
       />
     </div>
   )
