@@ -1,22 +1,11 @@
 "use client"
-import { useRef, useEffect } from "react"
 import Link from "next/link"
 import { MeshGradient } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
 
 export default function ShaderShowcase() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.error)
-    }
-  }, [])
-
   return (
     <div
-      ref={containerRef}
       className="min-h-screen bg-black relative"
       style={{ contain: 'layout style', willChange: 'transform' }}
     >
@@ -36,7 +25,7 @@ export default function ShaderShowcase() {
       </svg>
 
       <MeshGradient
-        className="absolute inset-0 w-full h-full z-5"
+        className="absolute inset-0 w-full h-full"
         style={{ pointerEvents: 'none' }}
         colors={["#000000", "#06b6d4", "#0891b2", "#164e63", "#f97316"]}
         speed={0.3}
@@ -93,18 +82,6 @@ export default function ShaderShowcase() {
         </div>
       </main>
 
-      {/* Video */}
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/images/video2.mp4"
-        loop
-        muted
-        playsInline
-        controls
-        preload="auto"
-        onLoadedData={() => videoRef.current?.play()}
-      />
     </div>
   )
 }

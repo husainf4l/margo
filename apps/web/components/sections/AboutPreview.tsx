@@ -1,6 +1,16 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
+
 export default function AboutPreview() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(console.error);
+    }
+  }, []);
+
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,14 +46,16 @@ export default function AboutPreview() {
 
             {/* Video - Full screen */}
             <video
+              ref={videoRef}
               className="w-full h-full object-cover rounded-xl"
-              controls
-              autoPlay
               muted
               loop
+              playsInline
+              preload="auto"
+              onLoadedData={() => videoRef.current?.play()}
               style={{ minHeight: '400px' }}
             >
-              <source src="/images/video.mp4" type="video/mp4" />
+              <source src="/images/video2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
