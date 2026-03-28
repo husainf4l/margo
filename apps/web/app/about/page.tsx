@@ -29,12 +29,6 @@ export default function AboutPage() {
           {/* Navigation — centered absolutely */}
           <nav className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-1">
             <Link
-              href="/#brands"
-              className="text-gray-500 hover:text-gray-900 text-sm font-light px-4 py-2 rounded-full hover:bg-gray-100 transition-all duration-200"
-            >
-              Our Brands
-            </Link>
-            <Link
               href="/about"
               className="text-gray-900 text-sm font-semibold px-4 py-2 rounded-full bg-gray-100 transition-all duration-200"
             >
