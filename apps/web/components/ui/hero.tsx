@@ -3,19 +3,6 @@ import { useRef } from "react"
 import Link from "next/link"
 import { MeshGradient } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
-import { PhotosGallery } from "./photos-gallery"
-
-const DEMO_IMAGES = [
-  "/images/1.webp",
-  "/images/2.webp",
-  "/images/3.webp",
-  "/images/4.webp",
-  "/images/5.webp",
-  "/images/7.webp",
-  "/images/8.webp",
-  "/images/6.webp",
-  "/images/6.jpg",
-];
 
 export default function ShaderShowcase() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -85,7 +72,7 @@ export default function ShaderShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="block font-black text-white drop-shadow-2xl">your partner in jordan</span>
+            <span className="block font-black text-white drop-shadow-2xl">Beauty & Personal Care Distribution</span>
           </motion.h1>
 
           <motion.div
@@ -99,8 +86,15 @@ export default function ShaderShowcase() {
         </div>
       </main>
 
-      {/* Photos Gallery */}
-      <PhotosGallery images={DEMO_IMAGES} />
+      {/* Video */}
+      <video
+        className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 object-cover"
+        src="/images/video2.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
     </div>
   )
 }
