@@ -69,33 +69,33 @@ export default function KeyStatistics() {
         </div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {stats.map((s, i) => (
             <div
               key={i}
-              className={`group relative bg-white ${s.border} border rounded-2xl p-6 flex flex-col gap-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
+              className={`group relative bg-white ${s.border} border rounded-xl p-4 flex flex-col gap-2 hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
             >
               {/* Hover glow */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-2xl`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-xl`} />
 
               {/* Icon */}
-              <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm flex-shrink-0 [&_svg]:w-5 [&_svg]:h-5`}>
+              <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm flex-shrink-0 [&_svg]:w-4 [&_svg]:h-4`}>
                 {s.icon}
               </div>
 
               {/* Number */}
-              <div className="text-3xl font-black text-gray-900 leading-none">
+              <div className="text-2xl font-black text-gray-900 leading-none">
                 {s.number}
               </div>
 
               {/* Labels */}
               <div className="flex flex-col gap-0.5">
-                <p className="text-sm font-bold text-gray-800">{s.label}</p>
-                <p className="text-xs text-gray-400 tracking-wide">{s.sub}</p>
+                <p className="text-xs font-bold text-gray-800">{s.label}</p>
+                <p className="text-[10px] text-gray-400 tracking-wide">{s.sub}</p>
               </div>
 
               {/* Bottom accent */}
-              <div className={`h-0.5 w-6 bg-gradient-to-r ${s.color} rounded-full opacity-30 group-hover:w-full group-hover:opacity-60 transition-all duration-500`} />
+              <div className={`h-0.5 w-5 bg-gradient-to-r ${s.color} rounded-full opacity-30 group-hover:w-full group-hover:opacity-60 transition-all duration-500`} />
             </div>
           ))}
         </div>

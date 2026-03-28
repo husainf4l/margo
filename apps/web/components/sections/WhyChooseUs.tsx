@@ -52,18 +52,6 @@ const strengths = [
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
-    title: 'Market Development',
-    description: 'Strategic marketing, brand positioning, and merchandising to drive sustained long-term growth.',
-    color: 'from-orange-500 to-amber-400',
-    light: 'bg-orange-50',
-    border: 'border-orange-100',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
@@ -85,41 +73,35 @@ export default function WhyChooseUs() {
           <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Our Strengths</span>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              Why Choose{' '}
-              <span className="bg-gradient-to-r from-cyan-600 to-orange-500 bg-clip-text text-transparent">
-                Margo Group
-              </span>
+              Why Choose Margo Group
             </h2>
-            <p className="text-base text-gray-500 max-w-sm md:text-right leading-relaxed">
-              Your trusted partner for beauty and personal care distribution in Jordan.
-            </p>
           </div>
           <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mt-5" />
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {strengths.map((s, i) => (
             <div
               key={i}
-              className={`group relative bg-white ${s.border} border rounded-2xl p-7 flex flex-col gap-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
+              className={`group relative bg-white ${s.border} border rounded-xl p-5 flex flex-col gap-3 hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
             >
               {/* Background glow on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-2xl`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-xl`} />
 
               {/* Icon */}
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm flex-shrink-0`}>
-                {s.icon}
+              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm flex-shrink-0`}>
+                <span className="scale-75 flex">{s.icon}</span>
               </div>
 
               {/* Text */}
-              <div className="flex flex-col gap-2">
-                <h3 className="text-base font-bold text-gray-900">{s.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{s.description}</p>
+              <div className="flex flex-col gap-1">
+                <h3 className="text-sm font-bold text-gray-900">{s.title}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed">{s.description}</p>
               </div>
 
               {/* Bottom accent */}
-              <div className={`h-0.5 w-8 bg-gradient-to-r ${s.color} rounded-full opacity-50 group-hover:w-full transition-all duration-500`} />
+              <div className={`h-0.5 w-6 bg-gradient-to-r ${s.color} rounded-full opacity-50 group-hover:w-full transition-all duration-500`} />
             </div>
           ))}
         </div>

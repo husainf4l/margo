@@ -69,10 +69,7 @@ export default function ContactSection() {
             Get in Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
-            Contact{' '}
-            <span className="bg-gradient-to-r from-cyan-600 to-orange-500 bg-clip-text text-transparent">
-              Us
-            </span>
+            Contact Us
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             We&apos;re here to answer your questions and discuss partnership opportunities.

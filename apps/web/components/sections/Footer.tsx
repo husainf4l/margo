@@ -32,7 +32,6 @@ export default function Footer() {
               {companyLinks.map((l) => (
                 <li key={l.label}>
                   <a href={l.href} className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200 flex items-center gap-2 group">
-                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-cyan-500 transition-colors" />
                     {l.label}
                   </a>
                 </li>

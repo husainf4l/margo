@@ -3,6 +3,19 @@ import { useRef } from "react"
 import Link from "next/link"
 import { MeshGradient } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
+import { PhotosGallery } from "./photos-gallery"
+
+const DEMO_IMAGES = [
+  "/images/1.webp",
+  "/images/2.webp",
+  "/images/3.webp",
+  "/images/4.webp",
+  "/images/5.webp",
+  "/images/7.webp",
+  "/images/8.webp",
+  "/images/6.webp",
+  "/images/6.jpg",
+];
 
 export default function ShaderShowcase() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -35,14 +48,14 @@ export default function ShaderShowcase() {
         speed={0.3}
       />
 
-      <header className="relative z-20 flex items-center p-2 pl-16">
+      <header className="relative z-20 flex items-center p-2 pl-24">
         {/* Logo — left */}
-        <div className="flex items-center">
+        <div className="flex items-center mt-4">
           <Link href="/">
             <img
-              src="/images/margo-group-logo.png"
+              src="/images/margo-group-logo-white (1).png"
               alt="Margo Group Logo"
-              className="h-32 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
         </div>
@@ -50,7 +63,7 @@ export default function ShaderShowcase() {
         {/* Navigation — centered absolutely */}
         <nav className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-2">
           <a
-            href="#services"
+            href="/services"
             className="text-white/80 hover:text-white text-sm font-light px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
           >
             Services
@@ -70,7 +83,7 @@ export default function ShaderShowcase() {
         </nav>
       </header>
 
-      <main className="absolute bottom-24 left-8 z-20 max-w-2xl">
+      <main className="absolute top-1/4 left-8 z-20 max-w-2xl">
         <div className="text-left">
           <motion.h1
             className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-none tracking-tight"
@@ -78,7 +91,7 @@ export default function ShaderShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="block font-black text-white drop-shadow-2xl">Excellence</span>
+            <span className="block font-black text-white drop-shadow-2xl">Margo Group</span>
           </motion.h1>
 
           <motion.div
@@ -91,12 +104,12 @@ export default function ShaderShowcase() {
               Your strategic partner for international beauty, skincare, cosmetics, and personal care brands in Jordan.
             </p>
             <div className="w-10 h-px bg-cyan-400/60 mb-4"></div>
-            <p className="text-sm font-light text-white/60 leading-relaxed">
-              We connect global manufacturers with pharmacies, beauty stores, salons, supermarkets, and online channels across the country.
-            </p>
           </motion.div>
         </div>
       </main>
+
+      {/* Photos Gallery */}
+      <PhotosGallery images={DEMO_IMAGES} />
     </div>
   )
 }
