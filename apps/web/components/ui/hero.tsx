@@ -36,7 +36,7 @@ export default function ShaderShowcase() {
       </svg>
 
       <MeshGradient
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-5"
         style={{ pointerEvents: 'none' }}
         colors={["#000000", "#06b6d4", "#0891b2", "#164e63", "#f97316"]}
         speed={0.3}
@@ -96,13 +96,14 @@ export default function ShaderShowcase() {
       {/* Video */}
       <video
         ref={videoRef}
-        className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 object-cover"
+        className="absolute inset-0 w-full h-full object-cover z-0"
         src="/images/video2.mp4"
         loop
         muted
         playsInline
         controls
         preload="auto"
+        onLoadedData={() => videoRef.current?.play()}
       />
     </div>
   )
