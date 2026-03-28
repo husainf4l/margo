@@ -12,14 +12,14 @@ export default function ContactFooter() {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <div className="space-y-2 text-gray-400">
-              <p>📞 Phone: +962 XX XXX XXXX</p>
-              <p>📧 Email: info@margogroup.jo</p>
+              <p>📞 Phone: +9627 9733 3208</p>
+              <p>📧 Email: info@margogroup.net</p>
             </div>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Location</h3>
             <p className="text-gray-400">
-              📍 Amman, Jordan
+              📍 Yajouz Rd. 95, Amman
             </p>
           </div>
         </div>

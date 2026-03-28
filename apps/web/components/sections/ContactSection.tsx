@@ -13,8 +13,8 @@ const contactInfo = [
     shadow: 'shadow-cyan-500/20',
     label: 'Phone',
     sub: 'Call us directly',
-    value: '+962 6 XXX XXXX',
-    href: 'tel:+96260000000',
+    value: '+9627 9733 3208',
+    href: 'tel:+962797333208',
   },
   {
     icon: (
@@ -26,8 +26,8 @@ const contactInfo = [
     shadow: 'shadow-orange-500/20',
     label: 'Email',
     sub: 'Send us a message',
-    value: 'info@margogroup.jo',
-    href: 'mailto:info@margogroup.jo',
+    value: 'info@margogroup.net',
+    href: 'mailto:info@margogroup.net',
   },
   {
     icon: (
@@ -40,8 +40,8 @@ const contactInfo = [
     shadow: 'shadow-emerald-500/20',
     label: 'Location',
     sub: 'Visit our office',
-    value: 'Amman, Jordan',
-    href: 'https://maps.google.com/?q=Amman,Jordan',
+    value: 'Yajouz Rd. 95, Amman',
+    href: 'https://maps.google.com/?q=Yajouz+Rd.+95,+Amman',
   },
 ];
 

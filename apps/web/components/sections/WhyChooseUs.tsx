@@ -49,61 +49,56 @@ const strengths = [
     light: 'bg-cyan-50',
     border: 'border-cyan-100',
   },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
-    title: 'Local Market Insight',
-    description: 'Deep understanding of Jordanian consumer preferences, retail dynamics, and evolving market trends.',
-    color: 'from-cyan-600 to-orange-500',
-    light: 'bg-gray-50',
-    border: 'border-gray-100',
-  },
 ];
 
 export default function WhyChooseUs() {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* Header */}
-        <div className="mb-14">
-          <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Our Strengths</span>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          {/* Left — text */}
+          <div>
+            <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Our Strengths</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
               Why Choose Margo Group
             </h2>
+            <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mb-8" />
+
+            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+              With years of experience and a commitment to excellence, Margo Group stands out as Jordan's premier beauty and personal care distributor.
+            </p>
+            <p className="text-base text-gray-500 leading-relaxed mb-10">
+              Our proven track record, extensive network, and dedication to quality make us the trusted partner for international brands entering the Jordanian market.
+            </p>
           </div>
-          <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mt-5" />
-        </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {strengths.map((s, i) => (
-            <div
-              key={i}
-              className={`group relative bg-white ${s.border} border rounded-xl p-5 flex flex-col gap-3 hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
-            >
-              {/* Background glow on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-xl`} />
+          {/* Right — cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {strengths.map((s, i) => (
+              <div
+                key={i}
+                className={`group relative bg-white ${s.border} border rounded-xl p-4 flex flex-col gap-2 hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
+              >
+                {/* Background glow on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-xl`} />
 
-              {/* Icon */}
-              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm flex-shrink-0`}>
-                <span className="scale-75 flex">{s.icon}</span>
+                {/* Icon */}
+                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm flex-shrink-0`}>
+                  <span className="scale-75 flex">{s.icon}</span>
+                </div>
+
+                {/* Text */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-xs font-bold text-gray-900">{s.title}</h3>
+                  <p className="text-[10px] text-gray-500 leading-relaxed">{s.description}</p>
+                </div>
+
+                {/* Bottom accent */}
+                <div className={`h-0.5 w-4 bg-gradient-to-r ${s.color} rounded-full opacity-50 group-hover:w-full transition-all duration-500`} />
               </div>
-
-              {/* Text */}
-              <div className="flex flex-col gap-1">
-                <h3 className="text-sm font-bold text-gray-900">{s.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{s.description}</p>
-              </div>
-
-              {/* Bottom accent */}
-              <div className={`h-0.5 w-6 bg-gradient-to-r ${s.color} rounded-full opacity-50 group-hover:w-full transition-all duration-500`} />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import BrandsSection from '../components/BrandsSection';
-import ContactFooter from '../components/ContactFooter';
+import Footer from '../../components/sections/Footer';
 
 interface CompanyInfo {
   name: string;
@@ -41,7 +41,7 @@ export default function CorporatePage() {
       <AboutSection />
       <ServicesSection />
       <BrandsSection />
-      <ContactFooter />
+      <Footer />
     </main>
   );
 }

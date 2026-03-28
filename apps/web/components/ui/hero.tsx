@@ -63,12 +63,6 @@ export default function ShaderShowcase() {
         {/* Navigation — centered absolutely */}
         <nav className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-2">
           <a
-            href="/services"
-            className="text-white/80 hover:text-white text-sm font-light px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
-          >
-            Services
-          </a>
-          <a
             href="/about"
             className="text-white/80 hover:text-white text-sm font-light px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
           >
@@ -91,7 +85,7 @@ export default function ShaderShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="block font-black text-white drop-shadow-2xl">Margo Group</span>
+            <span className="block font-black text-white drop-shadow-2xl">your partner in jordan</span>
           </motion.h1>
 
           <motion.div

@@ -63,45 +63,52 @@ export default function BusinessAreas() {
   return (
     <section className="py-24 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* Header */}
-        <div className="mb-14">
-          <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Where We Operate</span>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          {/* Left — text */}
+          <div>
+            <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Where We Operate</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
               Our Distribution Channels
             </h2>
+            <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mb-8" />
+
+            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+              We operate through multiple distribution channels to ensure our beauty and personal care products reach every corner of Jordan.
+            </p>
+            <p className="text-base text-gray-500 leading-relaxed mb-10">
+              From pharmacies and beauty salons to major retail chains and online platforms, our comprehensive network guarantees nationwide coverage and accessibility for all our partner brands.
+            </p>
           </div>
-          <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mt-5" />
-        </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {areas.map((area, index) => (
-            <div
-              key={index}
-              className={`group relative ${area.bg} ${area.border} border rounded-xl p-5 flex flex-col gap-3 hover:shadow-md ${area.shadow} transition-all duration-300 hover:-translate-y-1 bg-white`}
-            >
-              {/* Tag */}
-              <span className={`self-start text-[9px] font-semibold tracking-widest uppercase bg-gradient-to-r ${area.accent} bg-clip-text text-transparent`}>
-                {area.tag}
-              </span>
+          {/* Right — cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {areas.map((area, index) => (
+              <div
+                key={index}
+                className={`group relative ${area.bg} ${area.border} border rounded-xl p-4 flex flex-col gap-2 hover:shadow-md ${area.shadow} transition-all duration-300 hover:-translate-y-1 bg-white`}
+              >
+                {/* Tag */}
+                <span className={`self-start text-[8px] font-semibold tracking-widest uppercase bg-gradient-to-r ${area.accent} bg-clip-text text-transparent`}>
+                  {area.tag}
+                </span>
 
-              {/* Icon */}
-              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${area.accent} flex items-center justify-center text-white shadow-sm`}>
-                <span className="scale-75 flex">{area.icon}</span>
+                {/* Icon */}
+                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${area.accent} flex items-center justify-center text-white shadow-sm`}>
+                  <span className="scale-75 flex">{area.icon}</span>
+                </div>
+
+                {/* Text */}
+                <div className="flex flex-col gap-1 flex-1">
+                  <h3 className="text-xs font-bold text-gray-900 leading-snug">{area.title}</h3>
+                  <p className="text-[10px] text-gray-500 leading-relaxed">{area.description}</p>
+                </div>
+
+                {/* Bottom accent line */}
+                <div className={`h-0.5 w-4 bg-gradient-to-r ${area.accent} rounded-full opacity-60 group-hover:w-full transition-all duration-500`} />
               </div>
-
-              {/* Text */}
-              <div className="flex flex-col gap-1 flex-1">
-                <h3 className="text-sm font-bold text-gray-900 leading-snug">{area.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{area.description}</p>
-              </div>
-
-              {/* Bottom accent line */}
-              <div className={`h-0.5 w-6 bg-gradient-to-r ${area.accent} rounded-full opacity-60 group-hover:w-full transition-all duration-500`} />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

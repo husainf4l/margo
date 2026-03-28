@@ -42,9 +42,17 @@ export default function Footer() {
           {/* Contact */}
           <div className="md:col-span-2">
             <h4 className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 mb-5">Contact</h4>
-            <a href="mailto:info@margogroup.jo" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-medium">
-              info@margogroup.jo
-            </a>
+            <div className="space-y-3">
+              <a href="tel:+962797333208" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-medium block">
+                +9627 9733 3208
+              </a>
+              <a href="mailto:info@margogroup.net" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-medium block">
+                info@margogroup.net
+              </a>
+              <p className="text-sm text-gray-400">
+                Yajouz Rd. 95, Amman
+              </p>
+            </div>
           </div>
         </div>
 
