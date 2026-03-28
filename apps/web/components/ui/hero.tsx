@@ -94,9 +94,6 @@ export default function ShaderShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <p className="text-base font-light text-white/80 leading-relaxed mb-4">
-              Your strategic partner for international beauty, skincare, cosmetics, and personal care brands in Jordan.
-            </p>
             <div className="w-10 h-px bg-cyan-400/60 mb-4"></div>
           </motion.div>
         </div>
