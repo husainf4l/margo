@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -14,26 +13,13 @@ interface CompanyInfo {
   country: string;
 }
 
+const companyInfo: CompanyInfo = {
+  name: 'Margo Group',
+  description: 'Distributor of high-quality beauty and personal care products headquartered in Amman, Jordan',
+  country: 'Jordan'
+};
+
 export default function CorporatePage() {
-  const [companyInfo, setCompanyInfo] = useState<CompanyInfo | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchCompanyInfo() {
-      try {
-        const response = await fetch('http://localhost:3000/api/company');
-        const data = await response.json();
-        setCompanyInfo(data);
-      } catch (error) {
-        console.error('Error fetching company info:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchCompanyInfo();
-  }, []);
-
   return (
     <main className="min-h-screen">
       <Navbar />
