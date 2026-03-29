@@ -56,22 +56,22 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-white overflow-hidden">
+    <section id="contact" className="relative py-24 bg-background overflow-hidden">
       {/* Subtle background decoration */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-orange-500" />
-      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-cyan-50 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-orange-50 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-primary/50 via-primary to-accent" />
+      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 mb-4 rounded-full bg-cyan-50 text-cyan-700 text-sm font-semibold tracking-wide border border-cyan-100">
+          <span className="inline-block px-4 py-1.5 mb-4 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide border border-primary/20">
             Get in Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
             Contact Us
           </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             We&apos;re here to answer your questions and discuss partnership opportunities.
           </p>
         </div>
@@ -85,27 +85,27 @@ export default function ContactSection() {
                 href={item.href}
                 target={item.label === 'Location' ? '_blank' : undefined}
                 rel="noreferrer"
-                className="group flex items-center gap-5 p-5 rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-xl transition-all duration-300"
+                className="group flex items-center gap-5 p-6 rounded-2xl border border-border bg-card hover:border-primary/20 hover:shadow-lg transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <div
-                  className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} text-white flex items-center justify-center shadow-lg ${item.shadow} group-hover:scale-110 transition-transform duration-300`}
+                  className={`shrink-0 w-14 h-14 rounded-xl bg-linear-br ${item.gradient} text-white flex items-center justify-center shadow-lg ${item.shadow} group-hover:scale-110 transition-transform duration-200`}
                 >
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-0.5">{item.sub}</p>
-                  <p className="text-base font-bold text-gray-900 mb-0.5">{item.label}</p>
-                  <p className="text-sm text-cyan-600 font-medium group-hover:text-cyan-700 transition-colors">{item.value}</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">{item.sub}</p>
+                  <p className="text-sm font-bold text-foreground mb-0.5">{item.label}</p>
+                  <p className="text-sm text-primary font-medium group-hover:text-primary/80 transition-colors">{item.value}</p>
                 </div>
-                <svg className="ml-auto w-5 h-5 text-gray-300 group-hover:text-cyan-500 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="ms-auto w-5 h-5 text-muted-foreground/40 group-hover:text-primary transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </a>
             ))}
 
             {/* Response time badge */}
-            <div className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-100">
-              <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+            <div className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-linear-to-r from-cyan-50 to-blue-50 border border-cyan-100">
+              <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse shrink-0" />
               <p className="text-sm text-gray-600">
                 <span className="font-semibold text-gray-800">Typically replies within 24 hours</span> on business days.
               </p>
@@ -117,7 +117,7 @@ export default function ContactSection() {
             <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 md:p-10">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center text-center py-16 gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                  <div className="w-16 h-16 rounded-full bg-linear-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
                     <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
@@ -180,7 +180,7 @@ export default function ContactSection() {
                   </div>
                   <button
                     type="submit"
-                    className="group w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-base transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-[1.02]"
+                    className="group w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-xl bg-linear-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-base transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2"
                   >
                     Send Message
                     <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

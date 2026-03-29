@@ -53,22 +53,22 @@ const strengths = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — text */}
           <div>
-            <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Our Strengths</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
+            <span className="inline-block text-xs font-bold tracking-widest uppercase text-primary mb-4">Our Strengths</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground leading-tight mb-5 tracking-tight">
               Why Choose Margo Group
             </h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mb-8" />
+            <div className="w-12 h-1 bg-linear-to-r from-primary to-accent rounded-full mb-8" />
 
-            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+            <p className="text-base text-foreground leading-relaxed mb-5">
               With years of experience and a commitment to excellence, Margo Group stands out as Jordan's premier beauty and personal care distributor.
             </p>
-            <p className="text-base text-gray-500 leading-relaxed mb-10">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-10">
               Our proven track record, extensive network, and dedication to quality make us the trusted partner for international brands entering the Jordanian market.
             </p>
           </div>
@@ -78,24 +78,24 @@ export default function WhyChooseUs() {
             {strengths.map((s, i) => (
               <div
                 key={i}
-                className={`group relative bg-white ${s.border} border rounded-xl p-4 flex flex-col gap-2 hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
+                className={`group relative bg-card ${s.border} border rounded-2xl p-6 flex flex-col gap-3 hover:shadow-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] overflow-hidden`}
               >
                 {/* Background glow on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-xl`} />
+                <div className={`absolute inset-0 bg-linear-br ${s.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-200 rounded-2xl`} />
 
                 {/* Icon */}
-                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${s.color} flex items-center justify-center text-white shadow-sm flex-shrink-0`}>
-                  <span className="scale-75 flex">{s.icon}</span>
+                <div className={`w-10 h-10 rounded-md bg-linear-br ${s.color} flex items-center justify-center shadow-sm shrink-0`}>
+                  <span className="flex text-white">{s.icon}</span>
                 </div>
 
                 {/* Text */}
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-xs font-bold text-gray-900">{s.title}</h3>
-                  <p className="text-[10px] text-gray-500 leading-relaxed">{s.description}</p>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-sm font-bold text-foreground">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
                 </div>
 
                 {/* Bottom accent */}
-                <div className={`h-0.5 w-4 bg-gradient-to-r ${s.color} rounded-full opacity-50 group-hover:w-full transition-all duration-500`} />
+                <div className={`h-1 w-6 bg-linear-r ${s.color} rounded-full opacity-50 group-hover:w-full transition-all duration-300`} />
               </div>
             ))}
           </div>

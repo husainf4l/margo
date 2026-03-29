@@ -10,6 +10,7 @@ const areas = [
     title: 'Pharmacies',
     description: 'Comprehensive distribution to pharmaceutical chains and independent pharmacies nationwide.',
     accent: 'from-cyan-600 to-blue-600',
+    iconBg: 'bg-cyan-600',
     bg: 'bg-cyan-50/60',
     border: 'border-cyan-100',
     shadow: 'hover:shadow-cyan-500/10',
@@ -24,6 +25,7 @@ const areas = [
     title: 'Beauty Stores & Salons',
     description: 'Professional beauty products for salons, spas, and specialized beauty retailers.',
     accent: 'from-orange-500 to-rose-500',
+    iconBg: 'bg-orange-500',
     bg: 'bg-orange-50/60',
     border: 'border-orange-100',
     shadow: 'hover:shadow-orange-500/10',
@@ -38,6 +40,7 @@ const areas = [
     title: 'Retail Chains & Supermarkets',
     description: 'Mass market distribution through major retail chains and supermarket networks.',
     accent: 'from-cyan-600 to-orange-500',
+    iconBg: 'bg-primary',
     bg: 'bg-gray-50/80',
     border: 'border-gray-100',
     shadow: 'hover:shadow-gray-500/10',
@@ -52,6 +55,7 @@ const areas = [
     title: 'Online Distribution',
     description: 'E-commerce solutions and direct-to-consumer digital sales channels.',
     accent: 'from-orange-500 to-amber-400',
+    iconBg: 'bg-accent',
     bg: 'bg-orange-50/40',
     border: 'border-orange-100',
     shadow: 'hover:shadow-orange-500/10',
@@ -61,22 +65,22 @@ const areas = [
 
 export default function BusinessAreas() {
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
+    <section className="py-24 bg-muted overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — text */}
           <div>
-            <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Where We Operate</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
+            <span className="inline-block text-xs font-bold tracking-widest uppercase text-primary mb-4">Where We Operate</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground leading-tight mb-5 tracking-tight">
               Our Distribution Channels
             </h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mb-8" />
+            <div className="w-12 h-1 bg-linear-to-r from-primary to-accent rounded-full mb-8" />
 
-            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+            <p className="text-base text-foreground leading-relaxed mb-5">
               We operate through multiple distribution channels to ensure our beauty and personal care products reach every corner of Jordan.
             </p>
-            <p className="text-base text-gray-500 leading-relaxed mb-10">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-10">
               From pharmacies and beauty salons to major retail chains and online platforms, our comprehensive network guarantees nationwide coverage and accessibility for all our partner brands.
             </p>
           </div>
@@ -86,26 +90,26 @@ export default function BusinessAreas() {
             {areas.map((area, index) => (
               <div
                 key={index}
-                className={`group relative ${area.bg} ${area.border} border rounded-xl p-4 flex flex-col gap-2 hover:shadow-md ${area.shadow} transition-all duration-300 hover:-translate-y-1 bg-white`}
+                className={`group relative ${area.bg} ${area.border} border rounded-2xl p-6 flex flex-col gap-3 hover:shadow-xl ${area.shadow} transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] bg-card shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]`}
               >
                 {/* Tag */}
-                <span className={`self-start text-[8px] font-semibold tracking-widest uppercase bg-gradient-to-r ${area.accent} bg-clip-text text-transparent`}>
+                <span className={`self-start text-xs font-bold tracking-widest uppercase bg-linear ${area.accent} bg-clip-text text-transparent`}>
                   {area.tag}
                 </span>
 
                 {/* Icon */}
-                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${area.accent} flex items-center justify-center text-white shadow-sm`}>
-                  <span className="scale-75 flex">{area.icon}</span>
+                <div className={`w-10 h-10 rounded-md ${area.iconBg} flex items-center justify-center shadow-sm`}>
+                  <span className="flex text-white">{area.icon}</span>
                 </div>
 
                 {/* Text */}
-                <div className="flex flex-col gap-1 flex-1">
-                  <h3 className="text-xs font-bold text-gray-900 leading-snug">{area.title}</h3>
-                  <p className="text-[10px] text-gray-500 leading-relaxed">{area.description}</p>
+                <div className="flex flex-col gap-2 flex-1">
+                  <h3 className="text-sm font-bold text-foreground leading-snug">{area.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{area.description}</p>
                 </div>
 
                 {/* Bottom accent line */}
-                <div className={`h-0.5 w-4 bg-gradient-to-r ${area.accent} rounded-full opacity-60 group-hover:w-full transition-all duration-500`} />
+                <div className={`h-1 w-6 bg-linear-r ${area.accent} rounded-full opacity-60 group-hover:w-full transition-all duration-300`} />
               </div>
             ))}
           </div>

@@ -2,24 +2,24 @@
 
 export default function AboutPreview() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — text */}
           <div>
-            <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-4">Our Expertise</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-primary/80 mb-4 [letter-spacing:0.2em]">Our Expertise</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.1] mb-6 tracking-[-0.02em]">
               Beauty & Personal Care Distribution
             </h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mb-8" />
+            <div className="w-12 h-1 bg-linear-to-r from-primary to-accent rounded-full mb-8" />
 
-            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+            <p className="text-base text-foreground leading-relaxed mb-5">
               Margo Group is a Jordan-based company headquartered in Amman, specializing in the{' '}
-              <span className="font-semibold text-gray-900">import, marketing, sales, and nationwide distribution</span>{' '}
+              <span className="font-semibold text-foreground">import, marketing, sales, and nationwide distribution</span>{' '}
               of international beauty, skincare, cosmetics, and personal care brands.
             </p>
-            <p className="text-base text-gray-500 leading-relaxed mb-10">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-10">
               We act as a strategic partner for global manufacturers seeking to enter or expand within the Jordanian market.
               Beyond logistics and retail distribution, we support our partner brands with marketing, brand development,
               merchandising, and market positioning to ensure long-term growth and strong local presence.

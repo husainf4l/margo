@@ -22,7 +22,7 @@ export default function BrandsShowcase() {
   const row1 = [...brands, ...brands];
 
   return (
-    <section id="brands" className="relative bg-white border-y border-gray-100 py-16 overflow-hidden">
+    <section id="brands" className="relative bg-background border-y border-border/50 py-20 md:py-24 overflow-hidden">
       <style>{`
         @keyframes marquee-fwd {
           0%   { transform: translateX(0); }
@@ -38,40 +38,35 @@ export default function BrandsShowcase() {
       `}</style>
 
       {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-linear-to-r from-background to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-linear-to-l from-background to-transparent z-10" />
 
       {/* Header */}
-      <div className="text-center mb-14 px-4">
-        <span className="inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-cyan-600 mb-3">Our Portfolio</span>
-        <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">
+      <div className="text-center mb-14 px-4 max-w-7xl mx-auto">
+        <span className="inline-block text-xs font-bold tracking-widest uppercase text-primary mb-3">Our Portfolio</span>
+        <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-2 tracking-tight">
           Trusted Brand Portfolio
         </h2>
-        <div className="w-10 h-0.5 bg-gradient-to-r from-cyan-600 to-orange-500 rounded-full mx-auto mt-4" />
+        <div className="w-12 h-0.5 bg-linear-to-r from-primary to-accent rounded-full mx-auto mt-4" />
       </div>
 
       {/* Marquee — editorial list style */}
-      <div className="flex overflow-hidden border-t border-b border-gray-100">
+      <div className="flex overflow-hidden border-t border-b border-border">
         <div className="marquee-fwd">
           {row1.map((brand, i) => (
             <div
               key={i}
-              className="flex-shrink-0 group flex items-center gap-6 px-10 py-6 border-r border-gray-100 cursor-default transition-colors duration-200 hover:bg-gray-50"
+              className="shrink-0 group flex items-center gap-6 px-8 py-6 border-r border-border cursor-default transition-colors duration-200 hover:bg-muted/50"
             >
               {/* text */}
               <div className="flex flex-col gap-0.5">
-                <span className="text-[15px] font-semibold text-gray-900 whitespace-nowrap leading-tight tracking-tight">
+                <span className="text-sm font-semibold text-foreground whitespace-nowrap leading-tight tracking-tight">
                   {brand.name}
                 </span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-gray-400 group-hover:text-gray-500 transition-colors">
+                <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground group-hover:text-foreground/60 transition-colors">
                   {brand.sub}
                 </span>
               </div>
-
-              {/* arrow */}
-              <span className="text-gray-200 group-hover:text-gray-400 group-hover:translate-x-0.5 transition-all duration-200 text-xs ml-1">
-                →
-              </span>
             </div>
           ))}
         </div>
